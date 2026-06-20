@@ -1,11 +1,11 @@
 const vocabulary = [
-    { name: 'The first floor', image: 'https://via.placeholder.com/300x300/FF6B6B/FFFFFF?text=First+Floor' },
-    { name: 'The second floor', image: 'https://via.placeholder.com/300x300/4ECDC4/FFFFFF?text=Second+Floor' },
-    { name: 'The third floor', image: 'https://via.placeholder.com/300x300/45B7D1/FFFFFF?text=Third+Floor' },
-    { name: 'A classroom', image: 'https://via.placeholder.com/300x300/FFA07A/FFFFFF?text=Classroom' },
-    { name: 'A computer room', image: 'https://via.placeholder.com/300x300/98D8C8/FFFFFF?text=Computer+Room' },
-    { name: 'A music room', image: 'https://via.placeholder.com/300x300/F7DC6F/333333?text=Music+Room' },
-    { name: 'A playground', image: 'https://via.placeholder.com/300x300/BB8FCE/FFFFFF?text=Playground' }
+    { name: 'The first floor', image: 'https://raw.githubusercontent.com/teachmemaria24/memory-match-game/main/the%20First%20floor%20-%20first-floor.png' },
+    { name: 'The second floor', image: 'https://raw.githubusercontent.com/teachmemaria24/memory-match-game/main/the%20First%20floor%20-%20second-floor.png' },
+    { name: 'The third floor', image: 'https://raw.githubusercontent.com/teachmemaria24/memory-match-game/main/the%20First%20floor%20-%20third-floor.png' },
+    { name: 'A classroom', image: 'https://raw.githubusercontent.com/teachmemaria24/memory-match-game/main/the%20First%20floor%20-%20classroom.png' },
+    { name: 'A computer room', image: 'https://raw.githubusercontent.com/teachmemaria24/memory-match-game/main/the%20First%20floor%20-%20computer-room.png' },
+    { name: 'A music room', image: 'https://raw.githubusercontent.com/teachmemaria24/memory-match-game/main/the%20First%20floor%20-%20music-room.png' },
+    { name: 'A playground', image: 'https://raw.githubusercontent.com/teachmemaria24/memory-match-game/main/the%20First%20floor%20-%20playground.png' }
 ];
 
 let cards = [];
