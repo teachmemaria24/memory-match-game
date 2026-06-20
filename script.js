@@ -12,6 +12,17 @@ let cards = [];
 let flipped = [];
 let matched = [];
 let score = 0;
+let imageCache = {};
+
+// Preload all images
+function preloadImages() {
+    vocabulary.forEach(vocab => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = vocab.image;
+        imageCache[vocab.name] = vocab.image;
+    });
+}
 
 function initGame() {
     // Create pairs
@@ -31,11 +42,6 @@ function initGame() {
         cardEl.style.backgroundImage = 'none';
         cardEl.dataset.index = index;
         cardEl.onclick = () => flipCard(index, cardEl);
-        
-        // Preload image
-        const img = new Image();
-        img.src = card.image;
-        
         gameBoard.appendChild(cardEl);
     });
 }
@@ -46,11 +52,18 @@ function flipCard(index, cardEl) {
     
     // Flip the card to show image
     const imageUrl = cards[index].image;
-    cardEl.style.backgroundImage = `url("${imageUrl}")`;
-    cardEl.style.backgroundSize = 'cover';
-    cardEl.style.backgroundPosition = 'center';
-    cardEl.style.backgroundRepeat = 'no-repeat';
+    
+    // Use img tag approach for better mobile compatibility
     cardEl.innerHTML = '';
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'cover';
+    img.style.borderRadius = '10px';
+    img.crossOrigin = 'anonymous';
+    cardEl.appendChild(img);
+    
     cardEl.classList.add('flipped');
     flipped.push(index);
     
@@ -82,8 +95,6 @@ function checkMatch() {
     } else {
         // No match - flip back
         const cardEls = document.querySelectorAll('.card');
-        cardEls[first].style.backgroundImage = 'none';
-        cardEls[second].style.backgroundImage = 'none';
         cardEls[first].innerHTML = '?';
         cardEls[second].innerHTML = '?';
         cardEls[first].classList.remove('flipped');
@@ -111,5 +122,6 @@ function resetGame() {
     initGame();
 }
 
-// Start the game
+// Preload images and start the game
+preloadImages();
 initGame();
