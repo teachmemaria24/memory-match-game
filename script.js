@@ -38,7 +38,7 @@ function initGame() {
     cards.forEach((card, index) => {
         const cardEl = document.createElement('button');
         cardEl.className = 'card';
-        cardEl.innerHTML = '?';
+        cardEl.innerHTML = (index + 1); // Display numbers 1-14
         cardEl.style.backgroundImage = 'none';
         cardEl.dataset.index = index;
         cardEl.onclick = () => flipCard(index, cardEl);
@@ -95,8 +95,8 @@ function checkMatch() {
     } else {
         // No match - flip back
         const cardEls = document.querySelectorAll('.card');
-        cardEls[first].innerHTML = '?';
-        cardEls[second].innerHTML = '?';
+        cardEls[first].innerHTML = (first + 1); // Show number again
+        cardEls[second].innerHTML = (second + 1); // Show number again
         cardEls[first].classList.remove('flipped');
         cardEls[second].classList.remove('flipped');
     }
