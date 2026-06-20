@@ -39,7 +39,10 @@ function flipCard(index, cardEl) {
     if (flipped.length === 2) return;
     
     // Flip the card to show image
-    cardEl.style.backgroundImage = `url('${cards[index].image}')`;
+    const imageUrl = cards[index].image;
+    cardEl.style.backgroundImage = `url('${imageUrl}')`;
+    cardEl.style.backgroundSize = 'cover';
+    cardEl.style.backgroundPosition = 'center';
     cardEl.innerHTML = '';
     cardEl.classList.add('flipped');
     flipped.push(index);
